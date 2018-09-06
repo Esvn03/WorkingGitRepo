@@ -1,0 +1,39 @@
+<html>
+<head>
+
+</head>
+
+<body>
+	<button id="btn1" onclick="addNumber(1)">1</button>
+	<button id="plus" onclick="addNumber('+')">+</button>
+	<button id="btn3" onclick="addNumber(2)">2</button>
+	<button id="equals" onclick="addNumber('=')">=</button>
+	<p>
+		<div id="answer"></div>
+<script>
+
+	var array = new Array();
+	
+	function addNumber(value) {
+		if(value == "="){
+			doSum();
+		}else{
+			
+			array.push(value);
+			console.log(array);
+		}
+	
+	}
+	function doSum() {
+		
+		var sum = array.join(""); // REMOVES THE SEPPERATOR CHARACTER FROM THE ARRAY
+		console.log(sum);
+		
+		var result = eval(sum); // ACTUALLY RUNS THE VAR AS IF IT WAS CODE
+		document.getElementById("answer").innerHTML = result;
+	}
+
+
+</script>
+</body>
+</html>
